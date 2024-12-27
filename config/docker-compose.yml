@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  broker-service:
+    build:
+      context: ./../broker-service # `broker-service` `dockerfile` path
+      dockerfile: ./../broker-service/broker-service.dockerfile # `dockerfile` name
+    restart: always # restart on error
+    ports:
+      - "8080:80" # map host:docker
+    deploy:
+      mode: replicated # default is `global`
+      replicas: 1 # no. of replica containers to run
