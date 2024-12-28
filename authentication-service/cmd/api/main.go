@@ -13,7 +13,7 @@ import (
 	_ "github.com/jackc/pgx/v4/stdlib"
 )
 
-const WEB_PORT = 80
+const WEB_PORT = "80"
 
 var counts int64
 
@@ -36,9 +36,6 @@ func main() {
 		DB: conn,
 		Models: data.New(conn),
 	}
-
-	// set up Config
-	app := Config{}
 
 	srv := &http.Server{
 		Addr: fmt.Sprintf(":%s", WEB_PORT),
@@ -73,6 +70,7 @@ func connectToDB() *sql.DB {
 		connection, err := openDB(dsn)
 		if err != nil {
 			log.Println("Postgres not yet ready...")
+			counts++
 		} else {
 			log.Println("Connected to Postgres!")
 			return connection
