@@ -8,6 +8,9 @@
 		},
 		{
 			"path": "config"
+		},
+		{
+			"path": "authentication-service"
 		}
 	]
 }
