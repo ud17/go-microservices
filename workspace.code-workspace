@@ -8,6 +8,15 @@
 		},
 		{
 			"path": "config"
+		},
+		{
+			"path": "authentication-service"
+		},
+		{
+			"path": "logger-service"
+		},
+		{
+			"path": "mail-service"
 		}
 	]
 }
